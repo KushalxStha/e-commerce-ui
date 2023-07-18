@@ -1,0 +1,559 @@
+/* || RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+img{
+    display: block;
+}
+
+
+/* || VARIABLES*/
+:root{
+
+    /* BACKGROUND */
+    --THEME-COLOR:rgb(5, 148, 115);
+    --THEME-LIGHTER:rgb(91, 173, 154);
+    --THEME-DARKER:rgb(4, 133, 103);
+    --PNG-BG:rgb(238, 238, 238);
+
+    /* FONT */
+    --FF: 'Poppins', sans-serif;
+    --FS:1rem;
+}
+
+body{
+    font-family: var(--FF);
+    font-size: var(--FS);
+    position: relative;
+}
+
+/* ||| HEADER SECTION ||| */
+
+nav{
+    background-color: var(--THEME-COLOR);
+    padding: 0 100px;
+}
+
+nav ul{
+    display:flex;
+    justify-content: flex-start;
+}
+
+nav ul li{
+    line-height: 50px;
+    list-style: none;
+    padding: 0 25px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li:hover{
+    background-color:var(--THEME-DARKER);
+}
+
+.zindex{
+    z-index: 1;
+}
+
+.lborder{
+    border-left: solid rgb(183, 180, 180) 1px;
+}
+
+/* || DROP-DOWN & SIDE MENU */
+
+nav ul .list-with-sub,
+nav ul .list-with-sub:hover .drop-ul .sub-list{
+
+    /* Making the position relative of list containing sub-list  */
+    position: relative;
+}
+
+nav ul .list-with-sub .drop-ul,
+nav ul .list-with-sub:hover .drop-ul .sub-list .side-drop-ul{
+
+    /* Giving Absolute position to Unordered list(contains its all sub-list) */
+    position: absolute;    
+    /* If not absolute: Sub-lists will be inside of the parent-list.
+    --> As a result the size of parent list will expand. */
+    
+    /* Arranging sub-list in Column format */
+    flex-direction: column;
+    
+    /* Giving the width of sub-list same as its parent list */
+    width: 100%;
+    
+    /* Hiding drop-menu */   
+    display: none;
+}
+
+nav ul .list-with-sub:hover .drop-ul,
+nav ul .list-with-sub:hover .drop-ul .sub-list:hover .side-drop-ul{
+
+    /* Showing drop-menu when hovered */
+    display: block;
+}
+
+
+/* Position properties to drop-down & side menu*/
+.drop-ul{
+    left: 0;
+    top: 100%;
+}
+
+.side-drop-ul{
+    left: 100%;
+    top: 0;
+}
+
+
+/* Giving different background and color to drop-menu */
+nav ul .list-with-sub:hover .drop-ul .sub-list,
+nav ul .list-with-sub:hover .drop-ul .sub-list:hover .side-drop-ul .sub-list{
+    border-bottom: solid rgb(183, 180, 180) 1px;
+    background-color:white;
+}
+
+nav ul .list-with-sub:hover .drop-ul .sub-list a,
+nav ul .list-with-sub:hover .drop-ul .sub-list:hover .side-drop-ul .sub-list a{
+    color: black;
+}
+
+/* When hovered */
+nav ul .list-with-sub:hover .drop-ul .sub-list:hover,
+nav ul .list-with-sub:hover .drop-ul .sub-list:hover .side-drop-ul .sub-list:hover{
+    background-color:var(--THEME-LIGHTER);
+}
+
+nav ul .list-with-sub:hover .drop-ul .sub-list:hover a,
+nav ul .list-with-sub:hover .drop-ul .sub-list:hover .side-drop-ul .sub-list:hover a{
+    color: white;
+}
+
+/* ||| HEADER SECTION END ||| */
+
+
+
+/* ||| HERO-IMAGE SECTION ||| */
+.hero{
+    padding: 0 100px;
+    background-color: var(--PNG-BG);
+    
+    display: flex;
+    align-items: center;
+}
+
+.hero-cap{
+    width: 50%;
+    font-size: 2rem;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+
+    animation: slidefromdown 1s ease 0s 1 normal forwards;
+}
+
+@keyframes slidefromdown {
+    from{
+        transform: translateY(100px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+
+.hero-image{
+    animation: slidefromright 1s ease 0s 1 normal forwards;
+}
+
+@keyframes slidefromright{
+    from{
+        transform: translateX(100px);
+    }
+    to{
+        transform: translateX(-50px);
+    }
+}
+
+
+/* Giving properties to different Caption headings */
+.cursive-cap{
+    font-family: 'Caveat', cursive;
+    color: var(--THEME-DARKER);
+    font-size: 2em;
+}
+.large-cap{
+    font-size: 2.5em;
+}
+.medium-cap{
+    font-weight: normal;
+}
+
+.cap-shadow:hover{
+    text-shadow: 4px 4px rgb(182, 180, 180);
+}
+.cap-lshadow:hover{
+    text-shadow: 2.5px 2.5px rgb(182, 180, 180);
+}
+
+/* Giving properties to Button part */
+.btn{
+    margin:10% auto;
+    margin-inline: 30px;
+    display: flex;
+    gap: 40px;
+}
+.btn-1{
+    border: solid 1px var(--THEME-COLOR);
+    background-color: var(--THEME-COLOR);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+.btn-2{
+    border: solid 1px var(--THEME-COLOR);
+    background-color: white;
+    color:var(--THEME-COLOR);
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+/* Properties of hovered button */
+.btn-1:hover{
+    background-color: white;
+    color:var(--THEME-COLOR);
+}
+.btn-2:hover{
+    background-color: var(--THEME-COLOR);
+    color: white;
+}
+
+/* ||| HERO-IMAGE SECTION END ||| */
+
+
+
+/* ||| ROUND-IMAGES SECTION ||| */
+.round-pics{
+    margin: 50px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.round-img{
+    border: solid rgb(214, 212, 212) 1px;
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+.round-img:hover{
+    box-shadow: 0 0 5px rgb(102, 101, 101);
+}
+
+/* ||| ROUND-IMAGES SECTION ENDS ||| */
+
+
+
+
+/* ||| DEALS OF THE DAY - SECTION ||| */
+
+.deals-of-day{
+    padding: 0 100px;
+    margin-bottom: 20px;   
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.deal-title-div{
+    border-bottom: solid rgb(214, 212, 212) 1px;
+}
+
+.deal-head{
+    display: inline-block;   /*to use theme color in limited portion*/
+    border-bottom: solid var(--THEME-COLOR) 3px;
+}
+
+.deals-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.product-wrapper{
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+
+.deal-img{
+    width: 220px;
+    height: 257px;
+    margin:auto;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-flow: start;
+}
+.cart-btn{
+    font-size: 1rem;
+    border: none;
+    padding: 8px;
+    width: 50%;
+}
+h5, .cart-btn{
+    color: rgb(107, 106, 106);
+}
+
+.product-wrapper:hover{
+    box-shadow: 0 0 5px rgb(83, 82, 82);
+}
+
+.product-wrapper:hover .product-info .cart-btn:hover{
+    background-color: var(--THEME-COLOR);
+    color: white;
+}
+
+/* ||| DEALS OF THE DAY - SECTION ENDS ||| */
+
+
+
+
+/* ||| BANNERS SECTION ||| */
+.banners{
+    padding:30px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.banner-pics{
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+
+.banner-pics:hover{
+    box-shadow: 0 0 5px black;
+    transform: translateY(-15px);
+}
+
+.banner-cap-title{
+    font-size: 2rem;
+    position: absolute;
+    top: 25%;
+    left: 20px;
+}
+.banner-cap-offer{
+    font-size: 1rem;
+    position: absolute;
+    top: 45%;
+    left: 20px;
+    color:rgb(90, 89, 89)
+}
+
+.banner-cap-m-title{
+    font-size: 2rem;
+    position: absolute;
+    top: 25%;
+    left: 20px;
+    color: white;
+}
+.banner-cap-m-offer{
+    font-size: 1rem;
+    position: absolute;
+    top: 45%;
+    left: 20px;
+    color:whitesmoke;
+}
+
+.midb:hover{
+    box-shadow: 0 0 5px rgb(67, 22, 22);
+}
+
+.banner-cap-title:hover{
+    text-shadow: 2.5px 2.5px rgb(176, 175, 175);
+}
+.banner-cap-m-title:hover{
+    text-shadow: 4px 4px black;
+}
+
+.banner-cap-offer:hover{
+    text-shadow: 1.5px 1.5px rgb(176, 175, 175);
+}
+.banner-cap-m-offer:hover{
+    text-shadow: 3px 3px black;
+}
+
+/* ||| BANNERS SECTION ENDS ||| */
+
+
+
+/* ||| FEATURES SECTION ||| */
+
+.features{
+    padding:20px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.all-icons{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.icon{
+    height: 48px;
+    width: 48px;
+}
+
+.icon-detail{
+    color: rgb(136, 135, 135);
+}
+/* ||| FEATURES SECTION ENDS ||| */
+
+
+
+
+/* ||| NEWSLETTER SECTION ||| */
+.newsletter{
+    padding: 50px 100px;
+    background-color: var(--THEME-COLOR);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.nl{
+    display: flex;
+    flex-direction:column;
+    gap: 13px;
+}
+.whole-button{
+    position: relative;
+    display: flex;
+}
+
+.em-button{
+    font-size: 1.5rem;
+    border-radius: 30px;
+    width: 500px;
+    height: 50px;
+    border: none;
+    padding-left: 10px;
+    margin: auto;
+}
+
+.em-button:focus{
+    outline: none;
+}
+
+.subs-button{
+    position: absolute;
+    font-size: 1.5rem;
+
+    width: 130px;
+    height: 40px;
+
+    background-color: rgb(207, 73, 73);
+    color: white;
+
+    border-radius: 30px;
+    border: none;
+
+    top: 14px;
+    right: 6px;
+}
+
+.subs-button:hover{
+    background-color: rgb(88, 36, 36);
+}
+
+/* ||| NEWSLETTER SECTION ENDS ||| */
+
+
+
+
+
+/* ||| FOOTER SECTION ||| */
+
+.footer-1{
+    /* font-size: 2rem; */
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 2.5;
+}
+
+.footer-icon{
+    width: 20px;
+    height: 20px;
+}
+
+.footer-ul{
+    list-style: none;
+}
+
+.footer-hr{
+    margin-top: 20px 0;
+    color:1px black;
+}
+
+.footer-2{
+    margin: 20px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.list-with-icon{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+/* ||| FOOTER SECTION ENDS ||| */
+
+
+
+
+/* ||| FIXED POSITIONED DIV ||| */
+.fixed-box{
+    width: 40px;
+    height: 40px;
+    background-color: var(--THEME-LIGHTER);
+
+    display: flex;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.fixed-icon-link{
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    padding-top: 10%;
+    color: white;
+}
